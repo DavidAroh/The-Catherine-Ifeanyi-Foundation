@@ -1,5 +1,6 @@
 import { Heart, Users, GraduationCap, Stethoscope, HandHeart, ChevronRight, Mail, Phone, MapPin, Facebook, Instagram, Twitter, Check, BookOpen, Globe, Shield, TrendingUp, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function App() {
   const [activeTab, setActiveTab] = useState<'once' | 'monthly'>('once');
@@ -41,7 +42,7 @@ function App() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
-              <a href="#about" className="text-gray-700 hover:text-grass transition-colors font-medium">About</a>
+              <Link to="/about" className="text-gray-700 hover:text-grass transition-colors font-medium">About</Link>
               <a href="#mission" className="text-gray-700 hover:text-grass transition-colors font-medium">Mission</a>
               <a href="#focus" className="text-gray-700 hover:text-grass transition-colors font-medium">Focus Areas</a>
               <a href="#donate" className="text-gray-700 hover:text-sun transition-colors font-medium">Donate</a>
@@ -73,13 +74,13 @@ function App() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-200 shadow-lg transform transition-all duration-300 ease-in-out">
             <div className="px-4 pt-2 pb-4 space-y-1">
-              <a
-                href="#about"
+              <Link
+                to="/about"
                 className="block px-3 py-3 text-gray-700 hover:text-grass hover:bg-gray-50 rounded-md transition-colors font-medium"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About
-              </a>
+              </Link>
               <a
                 href="#mission"
                 className="block px-3 py-3 text-gray-700 hover:text-grass hover:bg-gray-50 rounded-md transition-colors font-medium"
@@ -133,21 +134,17 @@ function App() {
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-sun-light/20 via-white to-grass-light/20">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block bg-sun/10 text-gray-900 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                Founded September 20, 2023
-              </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                THE CATHERINE IFEANYI<br />
-                <span className="text-foundation-text">FOUNDATION</span>
-              </h1>
+            <div>   <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
+              THE CATHERINE IFEANYI<br />
+              <span className="text-foundation-text">FOUNDATION</span>
+            </h1>
               <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
-                Demonstrating God's love through humanitarian acts, providing education, healthcare, and empowerment to vulnerable children, women, and families across Nigeria and beyond.
+                We are a humanitarian foundation dedicated to bringing hope, education, healthcare, and empowerment to children, women, and families facing hardship across Nigeria and beyond. Our mission is simple yet powerful: to meet real needs, restore dignity, and create opportunities for brighter futures.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="#mission" className="bg-sun text-white px-8 py-4 rounded-full hover:bg-sun-light transition-all hover:shadow-xl transform hover:-translate-y-1 text-center font-semibold">
-                  Our Mission
-                </a>
+                <Link to='/about' className="bg-sun text-white px-8 py-4 rounded-full hover:bg-sun-light transition-all hover:shadow-xl transform hover:-translate-y-1 text-center font-semibold">
+                  About Us
+                </Link>
                 <a href="#trustees" className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full hover:border-sun hover:text-sun transition-all text-center font-semibold">
                   Meet Our Team
                 </a>
@@ -177,12 +174,19 @@ function App() {
 
           <div className="grid md:grid-cols-2 gap-12 items-center mt-16">
             <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">Founded on Faith & Compassion</h3>
+              <h3 className="text-3xl font-bold text-gray-900 mb-6">Giving Hope, Touching Lives.</h3>
               <p className="text-gray-600 leading-relaxed mb-6">
-                The Catherine Ifeanyi Foundation was born from a divine call to serve humanity. Founded by Miss Chidera Monica Anene on September 20, 2023, our organization has consistently provided school fees for children from kindergarten to university, supported expectant mothers with baby supplies, and inspired hope among families in rural Nigerian communities.
+                Founded by Chidera Monica Anene, the Catherine Ifeanyi Foundation (CIF) is a humanitarian movement dedicated to bringing hope, dignity, and practical support to children, mothers, and families in need.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Operating as a non-profit, non-political, and non-discriminatory humanitarian organization, we are guided by faith and compassion in everything we do. Our vision extends beyond borders — to provide love, empowerment, and support across nations.
+                What began as a simple act of compassion — paying school fees, supporting pregnant mothers, and providing essentials to families in rural communities around Abuja, Nigeria — has grown into a global mission of love and service, connecting people from all walks of life.
+              </p>
+              <br/>
+              <p className="text-gray-600 leading-relaxed">
+                Today, CIF builds bridges of hope between nations, gathering support from individuals and partners across the UK, Nigeria, and beyond to uplift communities and restore lives.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                At the Catherine Ifeanyi Foundation, we believe that love and kindness know no boundaries. We serve people of every background, belief, and culture — because humanity unites us all. Guided by the values of love, service, and compassion, we remain committed to meeting both the practical and emotional needs of those we serve, one life at a time.
               </p>
             </div>
             <div className="relative">
@@ -202,7 +206,8 @@ function App() {
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Mission</h2>
             <p className="text-lg sm:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              To demonstrate God's love through humanitarian acts — providing school fees, baby supplies, clothing, toys, and essential support to children, pregnant mothers, and families in need. We are committed to empowering communities through education, healthcare, economic empowerment, and development projects.
+             To bring hope, dignity, and practical help to children, mothers, and families in need — through education, empowerment, and compassionate giving.
+             Guided by love and service, we work to create a world where every person, regardless of faith or background, has the opportunity to thrive and live with purpose.
             </p>
           </div>
 
@@ -321,8 +326,8 @@ function App() {
                 <button
                   onClick={() => setActiveTab('once')}
                   className={`px-6 sm:px-8 py-3 rounded-full font-semibold transition-all text-center ${activeTab === 'once'
-                      ? 'bg-sun text-white shadow-lg'
-                      : 'text-gray-600 hover:text-sun'
+                    ? 'bg-sun text-white shadow-lg'
+                    : 'text-gray-600 hover:text-sun'
                     }`}
                 >
                   One-Time Donation
@@ -330,8 +335,8 @@ function App() {
                 <button
                   onClick={() => setActiveTab('monthly')}
                   className={`px-6 sm:px-8 py-3 rounded-full font-semibold transition-all text-center ${activeTab === 'monthly'
-                      ? 'bg-sun text-white shadow-lg'
-                      : 'text-gray-600 hover:text-sun'
+                    ? 'bg-sun text-white shadow-lg'
+                    : 'text-gray-600 hover:text-sun'
                     }`}
                 >
                   Monthly Donation
@@ -520,69 +525,69 @@ function App() {
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">Board of Trustees</h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              Our foundation is governed by dedicated individuals of integrity and good standing, committed to upholding our mission and Christian values.
+              Our foundation is led by a dedicated team of individuals of integrity and compassion, united by a shared commitment to serve humanity with love, transparency, and accountability.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-20 h-20 bg-sun/10 rounded-full flex items-center justify-center mb-4">
-                <Heart className="w-10 h-10 text-sun" />
-              </div>
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow text-center">
+              <img
+                src="./Chidera Anene.JPG"
+                alt="Anene Chidera Monica"
+                className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+              />
               <h3 className="text-xl font-bold text-gray-900 mb-1">Anene Chidera Monica</h3>
               <p className="text-sun font-semibold mb-3">Chairperson & Founder</p>
-              <p className="text-sm text-gray-600 mb-2">786 Seven Sisters Road, London, UK N15 5NU</p>
-              <a href="mailto:anene.monica@gmail.com" className="text-sm text-blue-600 hover:text-blue-700">anene.monica@gmail.com</a>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-20 h-20 bg-grass/10 rounded-full flex items-center justify-center mb-4">
-                <Shield className="w-10 h-10 text-grass" />
-              </div>
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow text-center">
+              <img
+                  src="./Fortune Sam.PNG"
+                  alt="Fortune Oluwakemi Comfort"
+                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                />
               <h3 className="text-xl font-bold text-gray-900 mb-1">Fortune Samuel</h3>
               <p className="text-grass font-semibold mb-3">Vice Chair</p>
-              <p className="text-sm text-gray-600 mb-2">Christ Apostolic Church, Zion City Family, Tasha 1, Abuja, Nigeria</p>
-              <a href="mailto:fortunesam123@gmail.com" className="text-sm text-blue-600 hover:text-blue-700">fortunesam123@gmail.com</a>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-20 h-20 bg-grass-light/10 rounded-full flex items-center justify-center mb-4">
-                <BookOpen className="w-10 h-10 text-grass-light" />
-              </div>
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow text-center">
+               <img
+                  src="./Micheal Olanipekun.JPG"
+                  alt="Olanipekun Michael Oluwatosin"
+                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                />
               <h3 className="text-xl font-bold text-gray-900 mb-1">Olanipekun Michael Oluwatosin</h3>
               <p className="text-grass-light font-semibold mb-3">Secretary</p>
-              <p className="text-sm text-gray-600 mb-2">Opp. Government Secondary School, Tasha, Abuja</p>
-              <a href="mailto:olanipekundad1@gmail.com" className="text-sm text-blue-600 hover:text-blue-700">olanipekundad1@gmail.com</a>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-20 h-20 bg-sun-light/10 rounded-full flex items-center justify-center mb-4">
-                <TrendingUp className="w-10 h-10 text-sun-light" />
-              </div>
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow text-center">
+                <img
+                  src="./Fortune Comfort.JPG"
+                  alt="Fortune Oluwakemi Comfort"
+                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                />
               <h3 className="text-xl font-bold text-gray-900 mb-1">Fortune Oluwakemi Comfort</h3>
               <p className="text-sun-light font-semibold mb-3">Treasurer</p>
-              <p className="text-sm text-gray-600 mb-2">Christ Apostolic Church, Zion City Family, Tasha 1, Abuja, Nigeria</p>
-              <a href="mailto:fortunecomfort1234@gmail.com" className="text-sm text-blue-600 hover:text-blue-700">fortunecomfort1234@gmail.com</a>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-20 h-20 bg-silhouette/10 rounded-full flex items-center justify-center mb-4">
-                <Users className="w-10 h-10 text-silhouette" />
-              </div>
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow text-center">
+                <img
+                  src="./Emma Anene.JPG"
+                  alt="Emmanuel C. Anene"
+                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                />
               <h3 className="text-xl font-bold text-gray-900 mb-1">Emmanuel C. Anene</h3>
               <p className="text-silhouette font-semibold mb-3">Consultant</p>
-              <p className="text-sm text-gray-600 mb-2">2 Daniel Close, Elijiji Phase 4, Rumurolu, Woji Rivers State</p>
-              <a href="mailto:ecanene2@gmail.com" className="text-sm text-blue-600 hover:text-blue-700">ecanene2@gmail.com</a>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-20 h-20 bg-foundation-text/10 rounded-full flex items-center justify-center mb-4">
-                <Globe className="w-10 h-10 text-foundation-text" />
-              </div>
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow text-center">
+                <img
+                  src="./Timothy Anene.JPG"
+                  alt="Onyedikachi Timothy Anene"
+                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                />
               <h3 className="text-xl font-bold text-gray-900 mb-1">Onyedikachi Timothy Anene</h3>
               <p className="text-foundation-text font-semibold mb-3">Public Relations Officer</p>
-              <p className="text-sm text-gray-600 mb-2">2278 East 24th Avenue, Vancouver, BC, Canada</p>
-              <a href="mailto:anenetimothy@gmail.com" className="text-sm text-blue-600 hover:text-blue-700">anenetimothy@gmail.com</a>
             </div>
           </div>
         </div>
@@ -594,7 +599,7 @@ function App() {
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">Faith & Ethics</h2>
             <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              The Catherine Ifeanyi Foundation operates as a ministry of help, rooted in Christian compassion and biblical principles of giving, service, stewardship, and love for humanity.
+               The Catherine Ifeanyi Foundation is built on the values of love, service, compassion, and integrity. We draw inspiration from faith and the shared belief that kindness has the power to heal, unite, and transform lives. Guided by these principles, we serve all people regardless of background or belief with a commitment to give, uplift, and act with humanity.
             </p>
           </div>
 
@@ -659,7 +664,7 @@ function App() {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 mb-1">Phone</div>
-                    <a href="tel:+447823517244" className="text-gray-600 hover:text-sun">+44 7823 517244</a>
+                    <a href="tel:+447341811879 " className="text-gray-600 hover:text-sun">+44 7341811879</a>
                   </div>
                 </div>
 
@@ -698,7 +703,7 @@ function App() {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 mb-1">Phone</div>
-                    <a href="tel:+2348022487652" className="text-gray-600 hover:text-grass">+234 802 248 7652</a>
+                    <a href="tel:+2348022487652" className="text-gray-600 hover:text-grass">+234 806 874 7428</a>
                   </div>
                 </div>
 
@@ -743,47 +748,6 @@ function App() {
           </a>
         </div>
       </section>
-
-      {/* Transparency Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <img
-                src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Accountability"
-                className="rounded-2xl shadow-xl w-full h-[300px] sm:h-[400px] object-cover"
-              />
-            </div>
-
-            <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">Accountability & Reporting</h3>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                The Catherine Ifeanyi Foundation maintains transparent financial, operational, and activity records. We are committed to the highest standards of accountability.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <Check className="w-6 h-6 text-sun flex-shrink-0 mt-1" />
-                  <p className="text-gray-700">Annual reports summarizing donations, beneficiaries, and impact</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Check className="w-6 h-6 text-sun flex-shrink-0 mt-1" />
-                  <p className="text-gray-700">Regular donor updates via newsletters and social media</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Check className="w-6 h-6 text-sun flex-shrink-0 mt-1" />
-                  <p className="text-gray-700">Board of Trustees meetings held at least twice yearly</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Check className="w-6 h-6 text-sun flex-shrink-0 mt-1" />
-                  <p className="text-gray-700">All income applied solely toward humanitarian objectives</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -813,8 +777,8 @@ function App() {
                   </div>
                   <div className="flex items-center space-x-3">
                     <Phone className="w-4 h-4 text-sun flex-shrink-0" />
-                    <a href="tel:+447823517244" className="text-gray-400 hover:text-sun transition-colors text-sm">
-                      +44 7823 517244
+                    <a href="tel:+447341811879" className="text-gray-400 hover:text-sun transition-colors text-sm">
+                      +44 7341811879
                     </a>
                   </div>
                 </div>
